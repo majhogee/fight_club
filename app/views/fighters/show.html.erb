@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @fighter.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @fighter.last_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fighter.description %>
+</p>
+
+<p>
+  <strong>Experience points:</strong>
+  <%= @fighter.exp_points %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+</p>
+<p>
+  <%= image_tag(@fighter.picture_url, :width => 300) if @fighter.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_fighter_path(@fighter) %> |
+<%= link_to 'Back', fighters_path %>
