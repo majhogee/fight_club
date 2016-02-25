@@ -31,7 +31,17 @@
     <%= f.label :avatar %><br>
     <%= f.file_field :picture %>
   </div>
-
+  
+  <h3>Skills</h3>
+  <div id="skills">
+    <%= f.fields_for :skills do |skill| %>
+      <%= render 'skill_fields', f: skill %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add skill', f, :skills %>
+    </div>
+  </div>
+  <%= f.submit %>
 
   <div class="actions">
     <%= f.submit %>
