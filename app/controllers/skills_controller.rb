@@ -1,4 +1,5 @@
 class SkillsController < ApplicationController
+  before_action :set_fighter
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
   # GET /skills
@@ -24,11 +25,12 @@ class SkillsController < ApplicationController
   # POST /skills
   # POST /skills.json
   def create
-    @skill = Skill.new(skill_params)
+    @fighter = Fighter.find(params[:fighter_id])
+    @skill = @fighter.skills.build(skill_params)
 
     respond_to do |format|
       if @skill.save
-        format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
+        format.html { redirect_to fighter_skill_path(@skill.fighter_id, @skill.id), notice: 'Skill was successfully created.' }
         format.json { render :show, status: :created, location: @skill }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class SkillsController < ApplicationController
   def update
     respond_to do |format|
       if @skill.update(skill_params)
-        format.html { redirect_to @skill, notice: 'Skill was successfully updated.' }
+        format.html { redirect_to fighter_skill_path(@skill.fighter_id, @skill.id), notice: 'Skill was successfully updated.' }
         format.json { render :show, status: :ok, location: @skill }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class SkillsController < ApplicationController
   def destroy
     @skill.destroy
     respond_to do |format|
-      format.html { redirect_to skills_url, notice: 'Skill was successfully destroyed.' }
+      format.html { redirect_to fighter_path(@fighter), notice: 'Skill was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -67,8 +69,12 @@ class SkillsController < ApplicationController
       @skill = Skill.find(params[:id])
     end
 
+    def set_fighter
+      @fighter = Fighter.find(params[:fighter_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def skill_params
-      params.require(:skill).permit(:name, :level, :fighter_id)
+      params.require(:skill).permit(:name, :level, :project_id)
     end
 end

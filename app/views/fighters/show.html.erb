@@ -24,6 +24,9 @@
   <%= @fighter.exp_points %>
 </p>
 
+<p>
+  <strong>Fighter's skills:</strong>
+</p>
 <table>
   <tbody>
     <% @fighter.skills.each do |skill| %>
@@ -31,7 +34,6 @@
         <td><%= skill.name %></td>
         <td><%= skill.level %></td>
         <td><%= link_to 'Show', fighter_skill_path(skill.fighter_id, skill.id) %></td>
-        <td><%= link_to 'Edit', edit_fighter_skill_path(skill.fighter_id, skill.id) %></td>
         <td><%= link_to 'Destroy', fighter_skill_path(skill.fighter_id, skill.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -39,7 +41,9 @@
 </table>
 
 <%= link_to 'Add skill', new_fighter_skill_path(@fighter) %>
+
 <li style="padding-bottom: 5px"></li>
+
 <%= link_to 'Edit', edit_fighter_path(@fighter) %> |
 <%= link_to 'Back', fighters_path %>
 
