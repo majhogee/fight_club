@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag(@fighter.picture_url, :width => 200) if @fighter.picture.present? %>
+</p>
+
+<p>
   <strong>First name:</strong>
   <%= @fighter.first_name %>
 </p>
@@ -20,12 +24,22 @@
   <%= @fighter.exp_points %>
 </p>
 
-<p>
-  <strong>Avatar:</strong>
-</p>
-<p>
-  <%= image_tag(@fighter.picture_url, :width => 300) if @fighter.picture.present? %>
-</p>
+<table>
+  <tbody>
+    <% @fighter.skills.each do |skill| %>
+      <tr>
+        <td><%= skill.name %></td>
+        <td><%= skill.level %></td>
+        <td><%= link_to 'Show', fighter_skill_path(skill.fighter_id, skill.id) %></td>
+        <td><%= link_to 'Edit', edit_fighter_skill_path(skill.fighter_id, skill.id) %></td>
+        <td><%= link_to 'Destroy', fighter_skill_path(skill.fighter_id, skill.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
+<%= link_to 'Add skill', new_fighter_skill_path(@fighter) %>
+<li style="padding-bottom: 5px"></li>
 <%= link_to 'Edit', edit_fighter_path(@fighter) %> |
 <%= link_to 'Back', fighters_path %>
+

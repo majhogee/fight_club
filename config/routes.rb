@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :skills
-  resources :fighters
-  root'club#start'
+# resources :skills
+# resources :fighters
+# root'club#start'
+  root'fighters#index'
 
+  resources :fighters do
+    resources :skills
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
