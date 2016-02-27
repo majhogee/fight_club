@@ -70,6 +70,6 @@ class FightersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fighter_params
-      params.require(:fighter).permit(:first_name, :last_name, :description, :exp_points, :picture)
+      params.require(:fighter).permit(:first_name, :last_name, :description, :exp_points, :picture, skills_attributes: [:name, :level])
     end
 end
