@@ -31,7 +31,7 @@
     <%= f.label :avatar %><br>
     <%= f.file_field :picture %>
   </div>
-  
+
   <h3>Skills</h3>
   <div id="skills">
     <%= f.fields_for :skills do |skill| %>
@@ -43,7 +43,4 @@
   </div>
   <%= f.submit %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
