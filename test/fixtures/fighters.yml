@@ -4,8 +4,7 @@ one:
   first_name: MyString
   last_name: MyString
   description: MyText
-  exp_points: 0
-  picture: 
+
 
 two:
   first_name: MyString

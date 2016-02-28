@@ -63,9 +63,9 @@ class SkillsController < ApplicationController
     end
   end
 
-  def count_skills
+  #def count_skills
 
-  end
+  #end
 
   private
     # Use callbacks to share common setup or constraints between actions.
