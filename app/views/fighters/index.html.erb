@@ -1,23 +1,19 @@
 <p id="notice"><%= notice %></p>
 <h1>Welcome to the Fight Club</h1>
-<li style="padding-bottom: 10px"></li>
-<h3>Listing Fighters</h3>
+<li style="padding-bottom: 2px"></li>
+
 
 <table>
-  <thead>
-  <%#
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  %>
-  </thead>
 
   <tbody>
+    <tr>
+    <h3>Setting up a fight</h3>
+    </tr>
+
+    <h3>Listing Fighters</h3>
     <% @fighters.each do |fighter| %>
       <tr>
+        <td><%= fighter.id %></td>  
         <td><%= image_tag(fighter.picture_url, :width => 50) if fighter.picture.present? %></td>
         <td><%= fighter.first_name %></td>
         <td><%= fighter.last_name %></td>  
@@ -25,6 +21,7 @@
         <td><%= link_to 'Edit', edit_fighter_path(fighter) %></td>
         <td><%= link_to 'Destroy', fighter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    </tr>
     <% end %>
   </tbody>
 </table>
