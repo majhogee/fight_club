@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224200500) do
+ActiveRecord::Schema.define(version: 20160229154845) do
 
   create_table "fighters", force: :cascade do |t|
     t.string   "first_name"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20160224200500) do
     t.integer  "exp_points"
     t.string   "picture"
   end
+
+  create_table "fights", force: :cascade do |t|
+    t.integer  "fighter1_id"
+    t.integer  "fighter2_id"
+    t.integer  "result"
+    t.integer  "fighter_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "fights", ["fighter_id"], name: "index_fights_on_fighter_id"
 
   create_table "skills", force: :cascade do |t|
     t.string   "name"

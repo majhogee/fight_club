@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :fights
 # resources :skills
 # resources :fighters
 # root'club#start'

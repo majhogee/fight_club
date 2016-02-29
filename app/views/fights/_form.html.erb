@@ -1,0 +1,18 @@
+<%= simple_form_for(@fight) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.label "Select the first fighter", class: 'form-inputs' %>
+    <%= collection_select (:fight, :fighter_id, Fighter.all, :id, {}, { :multiple => false}) %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label "Select the first fighter", class: 'form-inputs' %>
+    <%= collection_select (:fight, :fighter_id, Fighter.all, :id, {}, { :multiple => false}) %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+

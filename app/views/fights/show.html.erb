@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fighter1:</strong>
+  <%= @fight.fighter1_id %>
+</p>
+
+<p>
+  <strong>Fighter2:</strong>
+  <%= @fight.fighter2_id %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @fight.result %>
+</p>
+
+
+<%= link_to 'Edit', edit_fight_path(@fight) %> |
+<%= link_to 'Back', fights_path %>
