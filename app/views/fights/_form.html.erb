@@ -3,12 +3,12 @@
 
   <div class="form-inputs">
     <%= f.label "Select the first fighter", class: 'form-inputs' %>
-    <%= collection_select (:fight, :fighter_id, Fighter.all, :id, {}, { :multiple => false}) %>
+    <%= f.collection_select(:fighter1_id, Fighter.all, :id, :first_name) %>
   </div>
 
   <div class="form-inputs">
     <%= f.label "Select the first fighter", class: 'form-inputs' %>
-    <%= collection_select (:fight, :fighter_id, Fighter.all, :id, {}, { :multiple => false}) %>
+    <%= f.collection_select(:fighter2_id, Fighter.all, :id, :first_name) %>
   </div>
 
   <div class="form-actions">
