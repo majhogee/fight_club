@@ -71,7 +71,8 @@ class FightsController < ApplicationController
       puts "Fighter 2 won!"
     else
       @fight.result = 0
-      puts "It was a tie"    
+      puts "It was a tie"
+    end    
   end
 
   private
