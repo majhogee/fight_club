@@ -1,20 +1,23 @@
+<center>
 <p id="notice"><%= notice %></p>
-
+<h2>Fight took place between:</h2>
 <p>
-  <strong>Fighter1:</strong>
+  <strong>Fighter:</strong>
   <%= @fight.fighter1_id %>
+
 </p>
 
 <p>
-  <strong>Fighter2:</strong>
+  <strong>Fighter:</strong>
   <%= @fight.fighter2_id %>
 </p>
 
 <p>
   <strong>Result:</strong>
-  <%= @fight.result %>
+
 </p>
 
 
 <%= link_to 'Edit', edit_fight_path(@fight) %> |
 <%= link_to 'Back',  '/' %>
+</center>Z

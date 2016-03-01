@@ -24,7 +24,7 @@ class FightsController < ApplicationController
   # POST /fights
   # POST /fights.json
   def create
-    @fight = Fight.new(fight_params)
+    @fight = Fight.new(fight_params)    
 
     respond_to do |format|
       if @fight.save
@@ -36,6 +36,7 @@ class FightsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /fights/1
   # PATCH/PUT /fights/1.json
@@ -61,7 +62,26 @@ class FightsController < ApplicationController
     end
   end
 
+  def calculate_result
+    if @fighter1.fighting_power > @fighter2.fighting_power
+      @fight.result = fighter1_id
+      puts "Fighter 1 won!"
+    elsif @fighter1.fighting_power < @fighter2.fighting_power
+      @fight.result = fighter2_id
+      puts "Fighter 2 won!"
+    else
+      @fight.result = 0
+      puts "It was a tie"    
+  end
+
   private
+    def set_fighter
+      @fighter1 = Fighter.find(params[:fighter1_id])
+    end
+
+    def set_fighter2
+      @fighter2 = Fighter.find(params[:fighter2_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_fight
       @fight = Fight.find(params[:id])
