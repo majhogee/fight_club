@@ -1,15 +1,6 @@
-<p id="notice"><%= notice %></p>
-<h1>Welcome to the Fight Club</h1>
-<li style="padding-bottom: 2px"></li>
-
-
+<center>
 <table>
-
   <tbody>
-    <tr>
-    <h3>Setting up a fight</h3>
-    </tr>
-
     <h3>Listing Fighters</h3>
     <% @fighters.each do |fighter| %>
       <tr>
@@ -28,4 +19,7 @@
 
 <br>
 
-<%= link_to 'Add new Fighter', new_fighter_path %>
+<%= link_to 'Add new fighter', new_fighter_path %>
+<br>
+<%= link_to 'Back', '/' %>
+</center>

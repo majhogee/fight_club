@@ -1,4 +1,4 @@
-<%= form_for(@fighter) do |f| %>
+<%= simple_form_for(@fighter) do |f| %>
   <% if @fighter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@fighter.errors.count, "error") %> prohibited this fighter from being saved:</h2>

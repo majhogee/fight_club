@@ -1,3 +1,15 @@
+<center>
 <h1>Welcome to the Fight Club</h1>
+<br>
+<br>
+<table>
+  <tbody>
+    <%= image_tag("fight_club2.jpg", size: "200x200", :alt => "club")%> 
+    <h3><%= link_to 'See fighters', fighters_path %></h3>
+    <h3><%= link_to 'Add new fighter', new_fighter_path%></h3>
+    <h3><%= link_to 'Start a fight', new_fight_path %></h3>
+  </tbody>
+</table> 
+</center>
 
-<%= render 'app/views/fighters/_form.html.erb', f: skill %>
+

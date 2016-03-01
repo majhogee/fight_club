@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  root'club#start'
+
   resources :fights
 # resources :skills
 # resources :fighters
 # root'club#start'
-  root'fighters#index'
+
 
   resources :fighters do
     resources :skills
