@@ -62,15 +62,6 @@ class FightersController < ApplicationController
     end
   end
 
-  def fighting_power
-    sum = 0
-    for @fighter.skills.each do |skill|
-      sum = sum + skill.level
-    end
-    sum = sum + @fighter.exp_points*3
-    return sum
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_fighter

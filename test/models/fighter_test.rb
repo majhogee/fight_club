@@ -9,4 +9,9 @@ class FighterTest < ActiveSupport::TestCase
     fighter = Fighter.new
     assert_not fighter.save, "Saved the fighter without features"
   end
+
+  test "there are between 3 and 8 skills for each fighter" do
+    fighter.skills.size > 3 && fighter.skills.size < 8
+    assert true
+  end
 end

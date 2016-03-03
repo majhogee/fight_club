@@ -1,6 +1,7 @@
 class FightsController < ApplicationController
   before_action :set_fight, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_fighter1, only: [:calculate_result]
+  before_action :set_fighter2, only: [:calculate_result]
   # GET /fights
   # GET /fights.json
   def index
@@ -62,27 +63,7 @@ class FightsController < ApplicationController
     end
   end
 
-  def calculate_result
-    if @fighter1.fighting_power > @fighter2.fighting_power
-      @fight.result = fighter1_id
-      puts "Fighter 1 won!"
-    elsif @fighter1.fighting_power < @fighter2.fighting_power
-      @fight.result = fighter2_id
-      puts "Fighter 2 won!"
-    else
-      @fight.result = 0
-      puts "It was a tie"
-    end    
-  end
-
   private
-    def set_fighter
-      @fighter1 = Fighter.find(params[:fighter1_id])
-    end
-
-    def set_fighter2
-      @fighter2 = Fighter.find(params[:fighter2_id])
-    end
     # Use callbacks to share common setup or constraints between actions.
     def set_fight
       @fight = Fight.find(params[:id])
