@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a fight_club application, helping you to manage your very own fight club,
 
-Things you may want to cover:
+Ruby version used: ruby 2.1.0
 
-* Ruby version
+Allows you to:
 
-* System dependencies
+* See the fighter's profiles
 
-* Configuration
+* Add new fighters into database
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Set up fights
