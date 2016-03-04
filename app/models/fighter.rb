@@ -1,6 +1,6 @@
 class Fighter < ActiveRecord::Base
   has_many :skills
-  has_many :fights
+  belongs_to :fight
   validates :first_name, :last_name, :description, :exp_points, :picture, presence: true
   validates :exp_points, numericality: {less_than: 6}
   validates :exp_points, numericality: {greater_than_or_equal_to: 0}

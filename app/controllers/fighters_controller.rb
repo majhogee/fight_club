@@ -1,7 +1,6 @@
 class FightersController < ApplicationController
   before_action :set_fighter, only: [:show, :edit, :update, :destroy]
 
-
   # GET /fighters
   # GET /fighters.json
   def index
@@ -63,6 +62,7 @@ class FightersController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_fighter
       @fighter = Fighter.find(params[:id])
